@@ -1,0 +1,144 @@
+<nav class="uk-navbar uk-navbar-attached">
+    <div class="uk-container uk-container-center">
+        <a class="uk-navbar-brand" href="#">LOCALHOST</a>        
+
+        <ul class="uk-navbar-nav uk-navbar-center uk-hidden-small">
+            <li><a href="<?php echo $this->baseUrl('app/finance/overview') ?>">Visão Geral</a></li>
+            <li><a href="<?php echo $this->baseUrl('app/finance/bills') ?>">Lançamentos</a></li>                
+        </ul>
+
+
+        <div class="uk-navbar-flip">
+
+            <a href="#menu-right" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+
+            <ul class="uk-navbar-nav uk-hidden-small">
+                <li>
+                    <a href="#">
+                        <?php echo Zend_Auth::getInstance()->getIdentity()->firstname; ?>                        
+                    </a>
+                </li>
+                <li class="uk-parent" data-uk-dropdown="">
+                    <a href=""><i class="uk-icon-caret-down"></i></a>
+
+                    <div class="uk-dropdown uk-dropdown-navbar">
+                        <ul class="uk-nav uk-nav-navbar">
+                            <li><a href="#">Minha conta</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="#">Configuração</a></li>
+                            <li><a href="<?php echo $this->baseUrl('account/sign/out') ?>">Sair</a></li>                            
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="#">Ajuda</a></li>
+                            <li><a href="#">Reportar um problema</a></li>
+                        </ul>
+                    </div>
+
+                </li>
+            </ul>
+
+        </div>
+
+
+
+    </div>
+</nav>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages': ['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Year', 'Sales', 'Expenses'],
+            ['2004', 1000, 400],
+            ['2005', 1170, 460],
+            ['2006', 660, 1120],
+            ['2007', 1030, 540]
+        ]);
+
+        var options = {
+            title: 'Company Performance',
+            curveType: 'function',
+            legend: {position: 'bottom'}
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+    }
+</script>
+
+<section>
+    <div class="uk-container uk-container-center uk-margin-large-top uk-margin-large-bottom">
+        <div class="uk-grid uk-grid-match" data-uk-grid-match="{target:'.uk-panel'}">
+            <div class="uk-width-2-4">
+                <div class="uk-panel uk-panel-box uk-panel-box-secondary">
+                    <h3 class="uk-panel-title">Resumo Financeiro</h3>
+                    <div id="curve_chart" style="width: 100%; height: 200px"></div>                    
+                </div>
+            </div>
+            <div class="uk-width-1-4">
+                <div class="uk-panel uk-panel-box uk-panel-box-secondary">
+                    <h3 class="uk-panel-title">Contas a Pagar</h3>                                        
+                </div>
+            </div>
+            <div class="uk-width-1-4">
+                <div class="uk-panel uk-panel-box uk-panel-box-secondary">
+                    <h3 class="uk-panel-title">Contas a Recebber</h3>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="uk-modal" id="my-id">
+    <div class="uk-modal-dialog">
+        <div class="uk-modal-header">Contas</div>
+        <form class="uk-form uk-form-stacked">
+            <div class="uk-form-row uk-hidden">
+                <label class="uk-form-label" for="">ID</label>
+                <div class="uk-form-controls">
+                    <input type="text" id="form_bills_id" placeholder="...">
+                </div>
+            </div>
+            <div class="uk-form-row">
+                <label class="uk-form-label" for="">Descrição</label>
+                <div class="uk-form-controls">
+                    <input type="text" id="form_bills_description" placeholder="João da Silva">
+                </div>
+            </div>
+            <div class="uk-form-row">
+                <label class="uk-form-label" for="">Data do vencimento</label>
+                <div class="uk-form-controls">
+                    <input type="date" id="form_bills_due_date" placeholder="DD/MM/AAAA">
+                </div>
+            </div>
+            <div class="uk-form-row">
+                <label class="uk-form-label" for="">Valor</label>
+                <div class="uk-form-controls">
+                    <input type="text" id="form_bills_value" placeholder="0,00">
+                </div>
+            </div>
+
+        </form>
+        <div class="uk-modal-footer uk-text-right">
+            <button type="button" class="uk-button uk-modal-close">Cancelar</button>
+            <button type="button" class="uk-button uk-button-primary" id="button_save_bills">Salvar</button>
+        </div>
+    </div>
+</div>
+
+<!-- This is the off-canvas sidebar -->
+<div id="menu-right" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+        <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
+            <li><a href="<?php echo $this->baseUrl('app/finance/overview') ?>">Visão Geral</a></li>
+            <li><a href="<?php echo $this->baseUrl('app/finance/bills') ?>">Lançamentos</a></li>                
+            <li class="uk-nav-divider"></li>
+            <li><a href="#my-id" data-uk-modal>Novo Registro</a></li>
+            <li class="uk-nav-divider"></li>
+            <li><a href="">Sair</a></li>
+        </ul>
+    </div>
+</div>

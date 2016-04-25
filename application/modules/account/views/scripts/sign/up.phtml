@@ -1,0 +1,116 @@
+<section>
+    <div class="uk-container uk-container-center">
+        <div class="uk-grid uk-margin-large-top uk-margin-large-bottom">
+            <div class="uk-width-1-1">
+                <a href="/" class="uk-navbar-brand">LOCALHOST</a>
+                <div class="uk-navbar-flip">
+                    <ul class="uk-navbar-nav uk-hidden-small">
+                        <li><a href="/">Página inicial</a></li>                        
+                        <li class="uk-active"><a href="/account/sign/up">Cadastre-se</a></li>
+                        <li><a href="/account/sign/in">Login</a></li>
+                    </ul>
+                    <a href="#offcanvas-right" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="uk-container uk-container-center">
+        <div class="uk-grid uk-grid-divider uk-margin-large-top uk-margin-large-bottom">
+            <div class="uk-width-large-2-5 uk-width-medium-2-3 uk-width-small-1-1 uk-container-center">
+                <div class="uk-panel uk-panel-box">
+                    <form id="form-register" class="uk-form uk-form-stacked" autocomplete="off" enctype="application/x-www-form-urlencoded" method="post">
+                        <fieldset class="uk-margin-large-top uk-margin-bottom">
+                            <legend>Crie uma conta grátis</legend>
+
+                            <div class="uk-grid">
+                                <div class="uk-width-1-2">
+                                    <div class="uk-form-row">
+                                        <label class="uk-form-label" for="f-input-firstname">Nome</label>
+                                        <div class="uk-form-controls">
+                                            <div class="uk-form-icon uk-form-icon-flip uk-width-1-1">
+                                                <i id="f-i-firstname"></i>
+                                                <input type="text" name="f-input-firstname" id="f-input-firstname" class="uk-width-1-1" />
+                                            </div>             
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <div class="uk-form-row">
+                                        <label class="uk-form-label" for="f-input-lastname">Sobrenome</label>
+                                        <div class="uk-form-controls">
+                                            <div class="uk-form-icon uk-form-icon-flip uk-width-1-1">
+                                                <i id="f-i-lastname"></i>
+                                                <input type="text" name="f-input-lastname" id="f-input-lastname" class="uk-width-1-1" />
+                                            </div>             
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="uk-grid">
+                                <div class="uk-width-1-1">
+                                    <div class="uk-form-row">
+                                        <label class="uk-form-label" for="f-input-email">Seu e-mail</label>
+                                        <div class="uk-form-controls">
+                                            <div class="uk-form-icon uk-form-icon-flip uk-width-1-1">
+                                                <i id="f-i-email"></i>
+                                                <input type="text" name="f-input-email" id="f-input-email" class="uk-width-1-1" />
+                                            </div>                     
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="uk-grid">
+                                <div class="uk-width-1-1">
+                                    <div class="uk-form-row">
+                                        <label class="uk-form-label" for="f-input-password">Criar senha</label>
+                                        <div class="uk-form-controls">
+                                            <div class="uk-form-icon uk-form-icon-flip uk-width-1-1">
+                                                <i id="f-i-password"></i>
+                                                <input type="password" name="password" id="f-input-password" class="uk-width-1-1" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="uk-grid">
+                                <div class="uk-width-1-1">
+                            <div class="uk-form-row">
+                                <div class="uk-form-controls">
+                                    <button type="submit" class="uk-button uk-button-primary uk-width-1-1" id="create-account">Criar conta</button>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+                            
+
+                            <div class="uk-grid">
+                                <div class="uk-width-1-1">
+                            <div class="uk-form-row">
+                                <div class="uk-form-controls">
+                                    <p class="uk-text-small">Por favor, leia os  <a href="">termos e condições</a> antes de criar ua conta.</p>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="offcanvas-right" class="uk-offcanvas" aria-hidden="true">
+    <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+        <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav="">
+            <li class="uk-active"><a href="#">Página Inicial</a></li>
+            <li><a href="/account/sign/up">Cadastre-se</a></li>
+            <li><a href="/account/sign/in">Login</a></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<style>
+    iframe {
+        width: 100% !important; 
+        height: 100% !important;
+        position: absolute;
+    }
+</style>
+<nav class="uk-navbar uk-navbar-attached">
+    <div class="uk-container uk-container-center">
+        <a class="uk-navbar-brand uk-hidden-small" href="#">LOCALHOST</a>
+
+        <a href="#offcanvas-1" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas=""></a>
+
+        <div class="uk-navbar-flip">
+
+            <a href="" class="uk-navbar-toggle uk-navbar-toggle-alt uk-visible-small"></a>
+
+            <ul class="uk-navbar-nav uk-hidden-small">
+                
+                            <li><a href="<?php echo $this->baseUrl('app/f/b0') ?>">Voltar para contas a pagar</a></li>
+                <li class="uk-parent" data-uk-dropdown="">
+                    <a href="">Usuário</a>
+
+                    <div class="uk-dropdown uk-dropdown-navbar">
+                        <ul class="uk-nav uk-nav-navbar">
+                            <li><a href="<?php echo $this->baseUrl('account/sign/out') ?>">Sair</a></li>
+                        </ul>
+                    </div>
+
+                </li>
+
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<iframe src="https://technocont.shinyapps.io/Analytics"></iframe>
